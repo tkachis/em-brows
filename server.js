@@ -1,8 +1,12 @@
 const express = require('express')
+const path = require('path')
 
 const connectDB = require('./config/db')
 
 const app = express()
+
+// путь в корневую дирректорию
+global.appRoot = path.resolve(__dirname)
 
 connectDB()
 
@@ -13,6 +17,7 @@ app.use(express.json({ extended: false }))
 
 // routes
 app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/upload', require('./routes/api/upload'))
 
 const PORT = process.env.PORT || 5000
 

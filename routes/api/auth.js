@@ -1,12 +1,11 @@
 const express = require('express')
 const config = require('config')
-const { check, validationResult } = require('express-validator/check')
+const { check, validationResult } = require('express-validator')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
 const router = express.Router()
 
-const auth = require()
 const User = require('../../models/User')
 
 // @route         POST api/auth
@@ -28,7 +27,7 @@ router.post(
 
 		try {
 			// Проверим, что пользователь существует
-			let user = await User.findOne({ name })
+			let user = await User.findOne({ email })
 
 			if (!user) {
 				res.status(400).json({ errors: [{ msg: 'Неверные учетные данные' }] })

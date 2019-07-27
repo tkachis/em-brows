@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-	name: {
+	email: {
 		type: String,
 		required: true,
 		unique: true,
@@ -10,13 +10,9 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	admin: {
+	isAdmin: {
 		type: Boolean,
 		default: false,
-	},
-	date: {
-		type: Date,
-		default: Date.now,
 	},
 })
 

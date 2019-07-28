@@ -18,6 +18,7 @@ app.use(express.json({ extended: false }))
 // routes
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/upload', require('./routes/api/upload'))
+app.use('/api/image', require('./routes/api/image'))
 
 const PORT = process.env.PORT || 5000
 

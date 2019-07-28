@@ -65,6 +65,9 @@ const upload = multer({
 	},
 }).single('file')
 
+// @route         POST api/upload
+// @description   Загрузка изображения
+// @access        Private
 router.post('/', auth, (req, res) => {
 	upload(req, res, async err => {
 		let msg = ''

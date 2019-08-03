@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const config = require('config')
 
 const connectDB = require('./config/db')
 
@@ -14,7 +15,10 @@ connectDB()
 app.use(express.json({ extended: false }))
 
 // static
-
+app.use(
+	'/uploads',
+	express.static(path.join(__dirname, config.get('destination')))
+)
 // routes
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/upload', require('./routes/api/upload'))

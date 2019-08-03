@@ -1,0 +1,8 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	padding: 2rem 0;
+	line-height: 2.5rem;
+}

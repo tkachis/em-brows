@@ -1,23 +1,36 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
+import store from './store'
 
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Portfolio from './components/portfolio/Portfolio'
 import Login from './components/auth/Login'
 
+import { getUser } from './actions/auth'
+import setAuthToken from './helpers/setAuthToken'
+
+setAuthToken(localStorage.token)
+
 function App() {
+	useEffect(() => {
+		store.dispatch(getUser())
+	}, [])
 	return (
-		<BrowserRouter>
-			<section className="container">
-				<Header />
-				<Switch>
-					<Route exact path="/portfolio" component={Portfolio} />
-					<Route exact path="/login" component={Login} />
-				</Switch>
-				<Footer />
-			</section>
-		</BrowserRouter>
+		<Provider store={store}>
+			<Router>
+				<section className="container">
+					<Header />
+					<Switch>
+						<Route exact path="/portfolio" component={Portfolio} />
+						<Route exact path="/login" component={Login} />
+					</Switch>
+					<Footer />
+				</section>
+			</Router>
+		</Provider>
 	)
 }
 

@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 68vh;
+	padding: 2rem 0;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	min-width: 400px;
+}
+
+.form input[type='email'],
+.form input[type='password'] {
+	display: block;
+	width: 100%;
+	padding: 0.6rem;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+}
+
+.btn {
+	display: block;
+	background: #fff;
+	color: #333;
+	padding: 0.4rem 1.3rem;
+	margin-top: 1rem;
+	font-size: 1.2rem;
+	border: 1px solid #333;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+	width: 100%;
+}
+
+.btn:hover {
+	background: #333;
+	color: #fff;
+}

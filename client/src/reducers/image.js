@@ -2,16 +2,15 @@ import { GET_IMAGES, IMAGE_ERROR } from '../constants'
 
 const initialState = {
 	images: [],
-	loading: true,
 	error: {},
 }
 
 export default (state = initialState, { type, payload }) => {
 	switch (type) {
 		case GET_IMAGES:
-			return { ...state, images: payload, loading: false }
+			return { ...state, images: payload }
 		case IMAGE_ERROR:
-			return { ...state, error: payload, loading: false }
+			return { ...state, error: payload }
 		default:
 			return state
 	}

@@ -10,7 +10,7 @@ const auth = require('../../utils/auth')
 const User = require('../../models/User')
 
 // @route         POST api/auth
-// @description   Получить пользователя по id
+// @description   Получить аутентифицированного пользователя
 // @access        Private
 router.get('/', auth, async (req, res) => {
 	try {

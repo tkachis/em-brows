@@ -25,7 +25,7 @@ const Gallery = ({ getImages, image: { images } }) => {
 }
 
 Gallery.propTypes = {
-	getImage: PropTypes.func.isRequired,
+	getImages: PropTypes.func.isRequired,
 	image: PropTypes.object.isRequired,
 }
 

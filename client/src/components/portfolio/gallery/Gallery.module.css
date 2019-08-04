@@ -1,10 +1,8 @@
 .gallery {
 	padding: 2rem 0;
 	display: grid;
-	grid-template-columns: repeat(3, auto);
-	grid-auto-rows: minmax(568px, auto);
-	grid-auto-flow: dense;
-	grid-gap: 1rem;
+	grid-template-columns: repeat(4, auto);
+	grid-gap: 0.5rem;
 }
 
 .image {

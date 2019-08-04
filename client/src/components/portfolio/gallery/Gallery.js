@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { getImages } from '../../../actions/image'
 
@@ -21,6 +22,11 @@ const Gallery = ({ getImages, image: { images } }) => {
 			))}
 		</div>
 	)
+}
+
+Gallery.propTypes = {
+	getImage: PropTypes.func.isRequired,
+	image: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({

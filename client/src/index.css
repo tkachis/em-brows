@@ -34,6 +34,12 @@ h6 {
 	color: #333;
 }
 
+button {
+	outline: none;
+	border: none;
+	background: none;
+}
+
 .container {
 	max-width: 1800px;
 	margin: auto;

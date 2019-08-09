@@ -8,6 +8,8 @@ import {
 	UPLOAD_ERROR,
 } from '../constants'
 
+import { setAlert } from './alert'
+
 // Get All Images
 export const getImages = () => async dispatch => {
 	try {
@@ -37,12 +39,18 @@ export const uploadImage = formData => async dispatch => {
 				type: UPLOAD_ERROR,
 				payload: res.data.msgError,
 			})
+
+			dispatch(setAlert(res.data.msgError, 'danger'))
+
+			return new Error()
 		}
 
 		dispatch({
 			type: UPLOAD_IMAGE,
 			payload: res.data.image,
 		})
+
+		dispatch(setAlert('Изображение загружено', 'success'))
 	} catch (err) {
 		console.log(err)
 
@@ -62,6 +70,8 @@ export const deleteImage = imageId => async dispatch => {
 			type: DELETE_IMAGE,
 			payload: imageId,
 		})
+
+		dispatch(setAlert('Изображение удалено', 'success'))
 	} catch (err) {
 		console.log(err)
 

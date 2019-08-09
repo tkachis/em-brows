@@ -2,6 +2,7 @@ import axios from 'axios'
 import setAuthToken from '../helpers/setAuthToken'
 
 import { LOGIN_SUCCESS, LOGIN_FAIL, GET_USER, LOGOUT } from '../constants'
+import { setAlert } from './alert'
 
 // Get User
 export const getUser = () => async dispatch => {
@@ -35,7 +36,11 @@ export const login = ({ email, password }) => async dispatch => {
 
 		dispatch(getUser())
 	} catch (err) {
-		console.log(err)
+		const errors = err.response.data.errors
+
+		if (errors) {
+			errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+		}
 
 		dispatch({
 			type: LOGIN_FAIL,

@@ -37,7 +37,6 @@ const Login = ({ isAuthenticated, login }) => {
 					name="email"
 					value={email}
 					onChange={e => onChange(e)}
-					required
 				/>
 				<input
 					type="password"
@@ -45,7 +44,6 @@ const Login = ({ isAuthenticated, login }) => {
 					name="password"
 					value={password}
 					onChange={e => onChange(e)}
-					required
 				/>
 				<input type="submit" value="Войти" className={styles.btn} />
 			</form>

@@ -2,15 +2,17 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { getImages, deleteImage } from '../../../actions/image'
+import { getImages, deleteImage, uploadImage } from '../../../actions/image'
 
 import GalleryItem from './GalleryItem'
+import FormItem from './formItem/FormItem'
 
 import styles from './Gallery.module.css'
 
 const Gallery = ({
 	getImages,
 	deleteImage,
+	uploadImage,
 	image: { images },
 	auth: { isAuthenticated },
 }) => {
@@ -23,11 +25,7 @@ const Gallery = ({
 	) : (
 		<>
 			<div className={styles.gallery}>
-				{isAuthenticated && (
-					<button className={styles.add}>
-						<i className="fas fa-plus fa-5x" />
-					</button>
-				)}
+				{isAuthenticated && <FormItem uploadImage={uploadImage} />}
 				{images.map(image => (
 					<GalleryItem
 						key={image._id}
@@ -44,6 +42,7 @@ const Gallery = ({
 Gallery.propTypes = {
 	getImages: PropTypes.func.isRequired,
 	deleteImage: PropTypes.func.isRequired,
+	uploadImage: PropTypes.func.isRequired,
 	image: PropTypes.object.isRequired,
 }
 
@@ -54,5 +53,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ getImages, deleteImage }
+	{ getImages, deleteImage, uploadImage }
 )(Gallery)

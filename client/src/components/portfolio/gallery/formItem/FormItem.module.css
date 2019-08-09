@@ -1,0 +1,60 @@
+.form {
+	position: relative;
+}
+
+.form input[type='file'],
+.form input[type='submit'] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.1px;
+	height: 0.1px;
+	z-index: -1;
+	opacity: 0;
+}
+
+.lableFile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border: 0.4rem solid #333;
+	background: #fff;
+	color: #333;
+}
+
+.lableFile:hover {
+	border-color: #555;
+	color: #555;
+}
+
+.preview {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.image {
+	height: 100%;
+	width: 100%;
+}
+
+.labelSubmit {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 3rem;
+	background: #f33;
+	color: #fff;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+}
+
+.labelSubmit:hover {
+	background: #f55;
+}

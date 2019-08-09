@@ -4,17 +4,20 @@ import PropTypes from 'prop-types'
 
 import styles from './Alert.module.css'
 
-const Alert = ({ alerts }) =>
-	alerts !== null &&
-	alerts.length > 0 &&
-	alerts.map(alert => (
-		<div
-			key={alert.id}
-			className={`${styles.alert} ${styles[alert.alertType]}`}
-		>
-			{alert.msg}
-		</div>
-	))
+const Alert = ({ alerts }) => (
+	<div className={styles.wrapper}>
+		{alerts !== null &&
+			alerts.length > 0 &&
+			alerts.map(alert => (
+				<div
+					key={alert.id}
+					className={`${styles.alert} ${styles[alert.alertType]}`}
+				>
+					{alert.msg}
+				</div>
+			))}
+	</div>
+)
 
 Alert.propTypes = {
 	alerts: PropTypes.array.isRequired,

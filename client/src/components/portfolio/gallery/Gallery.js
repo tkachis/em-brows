@@ -23,19 +23,17 @@ const Gallery = ({
 	return !images ? (
 		<h1>Нет изображений</h1>
 	) : (
-		<>
-			<div className={styles.gallery}>
-				{isAuthenticated && <FormItem uploadImage={uploadImage} />}
-				{images.map(image => (
-					<GalleryItem
-						key={image._id}
-						image={image}
-						isAuthenticated={isAuthenticated}
-						deleteImage={deleteImage}
-					/>
-				))}
-			</div>
-		</>
+		<div className={styles.gallery}>
+			{isAuthenticated && <FormItem uploadImage={uploadImage} />}
+			{images.map(image => (
+				<GalleryItem
+					key={image._id}
+					image={image}
+					isAuthenticated={isAuthenticated}
+					deleteImage={deleteImage}
+				/>
+			))}
+		</div>
 	)
 }
 

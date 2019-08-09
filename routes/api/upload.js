@@ -70,13 +70,12 @@ const upload = multer({
 // @access        Private
 router.post('/', auth, (req, res) => {
 	upload(req, res, async err => {
-		let msg = ''
-		let error = false
+		let msgError = ''
+		let image = {}
 
 		if (err) {
-			error = true
 			if (err.code === 'LIMIT_FILE_SIZE') {
-				msg = 'Загрузите изображение менее 10mb'
+				msgError = 'Загрузите изображение менее 10mb'
 
 				rimraf(
 					path.join(appRoot, config.get('destination'), req.dir.split('/')[0]),
@@ -89,21 +88,19 @@ router.post('/', auth, (req, res) => {
 				)
 			}
 			if (err.code === 'EXTENTION') {
-				msg = 'Файл должен иметь расширение jpeg или png'
+				msgError = 'Файл должен иметь расширение jpeg или png'
 			}
 		} else {
-			const image = new Image({
+			image = new Image({
 				path: `/${req.dir}/${req.fileName}`,
 			})
 
 			await image.save()
-
-			msg = 'Изображение успешно загружено'
 		}
 
 		res.json({
-			error,
-			msg,
+			msgError,
+			image,
 		})
 	})
 })

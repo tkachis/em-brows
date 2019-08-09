@@ -1,6 +1,12 @@
 import axios from 'axios'
 
-import { GET_IMAGES, DELETE_IMAGE, IMAGE_ERROR } from '../constants'
+import {
+	GET_IMAGES,
+	UPLOAD_IMAGE,
+	DELETE_IMAGE,
+	IMAGE_ERROR,
+	UPLOAD_ERROR,
+} from '../constants'
 
 // Get All Images
 export const getImages = () => async dispatch => {
@@ -10,6 +16,32 @@ export const getImages = () => async dispatch => {
 		dispatch({
 			type: GET_IMAGES,
 			payload: res.data,
+		})
+	} catch (err) {
+		console.log(err)
+
+		dispatch({
+			type: IMAGE_ERROR,
+			payload: { msg: err.response.statusText, status: err.response.status },
+		})
+	}
+}
+
+// Upload Image
+export const uploadImage = formData => async dispatch => {
+	try {
+		const res = await axios.post('api/upload', formData)
+
+		if (res.data.msgError) {
+			dispatch({
+				type: UPLOAD_ERROR,
+				payload: res.data.msgError,
+			})
+		}
+
+		dispatch({
+			type: UPLOAD_IMAGE,
+			payload: res.data.image,
 		})
 	} catch (err) {
 		console.log(err)

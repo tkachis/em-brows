@@ -1,4 +1,10 @@
-import { GET_IMAGES, DELETE_IMAGE, IMAGE_ERROR } from '../constants'
+import {
+	GET_IMAGES,
+	UPLOAD_IMAGE,
+	DELETE_IMAGE,
+	IMAGE_ERROR,
+	UPLOAD_ERROR,
+} from '../constants'
 
 const initialState = {
 	images: [],
@@ -9,6 +15,10 @@ export default (state = initialState, { type, payload }) => {
 	switch (type) {
 		case GET_IMAGES:
 			return { ...state, images: payload }
+		case UPLOAD_IMAGE:
+			return { ...state, images: [payload, ...state.images] }
+		case UPLOAD_ERROR:
+			return { ...state, error: payload }
 		case DELETE_IMAGE:
 			return {
 				...state,

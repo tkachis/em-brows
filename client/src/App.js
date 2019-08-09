@@ -6,6 +6,7 @@ import store from './store'
 
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
+import Alert from './components/layout/alert/Alert'
 import Portfolio from './components/portfolio/Portfolio'
 import Login from './components/auth/Login'
 
@@ -27,6 +28,7 @@ function App() {
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/login" component={Login} />
 					</Switch>
+					<Alert />
 					<Footer />
 				</section>
 			</Router>

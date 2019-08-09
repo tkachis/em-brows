@@ -43,7 +43,7 @@ const FormItem = ({ uploadImage }) => {
 					}}
 					id="fileLable"
 				/>
-				<label for="fileLable" className={styles.lableFile}>
+				<label htmlFor="fileLable" className={styles.lableFile}>
 					<i className="fas fa-plus fa-5x" />
 				</label>
 				<input type="submit" value="+" id="submitLable" />
@@ -51,7 +51,7 @@ const FormItem = ({ uploadImage }) => {
 			{image && (
 				<div className={styles.preview}>
 					<img src={dataUrl} alt="Your file" className={styles.image} />
-					<label for="submitLable" className={styles.labelSubmit}>
+					<label htmlFor="submitLable" className={styles.labelSubmit}>
 						Загрузить
 					</label>
 				</div>

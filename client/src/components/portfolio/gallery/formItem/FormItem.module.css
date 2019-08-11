@@ -13,10 +13,15 @@
 	opacity: 0;
 }
 
-.lableFile {
+label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.lableFile {
 	width: 100%;
 	height: 100%;
 	border: 0.4rem solid #333;
@@ -44,17 +49,14 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 3rem;
-	background: #f33;
+	background: #25a543;
 	color: #fff;
 	font-size: 1.3rem;
 	text-transform: uppercase;
 }
 
 .labelSubmit:hover {
-	background: #f55;
+	background: #36b854;
 }

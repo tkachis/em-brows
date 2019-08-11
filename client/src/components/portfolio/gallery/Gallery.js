@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { trackWindowScroll } from 'react-lazy-load-image-component'
 import PropTypes from 'prop-types'
 
 import { getImages, deleteImage, uploadImage } from '../../../actions/image'
@@ -15,6 +17,7 @@ const Gallery = ({
 	uploadImage,
 	image: { images },
 	auth: { isAuthenticated },
+	scrollPosition,
 }) => {
 	useEffect(() => {
 		getImages()
@@ -31,6 +34,7 @@ const Gallery = ({
 					image={image}
 					isAuthenticated={isAuthenticated}
 					deleteImage={deleteImage}
+					scrollPosition={scrollPosition}
 				/>
 			))}
 		</div>
@@ -49,7 +53,10 @@ const mapStateToProps = state => ({
 	auth: state.auth,
 })
 
-export default connect(
-	mapStateToProps,
-	{ getImages, deleteImage, uploadImage }
+export default compose(
+	trackWindowScroll,
+	connect(
+		mapStateToProps,
+		{ getImages, deleteImage, uploadImage }
+	)
 )(Gallery)

@@ -1,0 +1,87 @@
+.about {
+	display: flex;
+	padding: 2rem 0;
+}
+
+.about div {
+	flex: 1;
+}
+
+.image {
+	min-height: 720px;
+	box-shadow: 0 0 0.5rem #c5c5c5;
+	background: url('../../img/about.jpg') no-repeat center center/cover;
+}
+
+.info {
+	padding-left: 2rem;
+}
+
+.info h1 {
+	font-size: 6rem;
+	width: 100%;
+}
+
+.info p {
+	padding: 2rem 0;
+	font-size: 1.5rem;
+	text-align: justify;
+	width: 100%;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 0;
+	font-size: 2rem;
+	line-height: 3rem;
+}
+
+.contacts li a {
+	text-decoration: underline;
+}
+
+/* @media (min-width: 901px) and (max-width: 1200px) {
+	.info h1 {
+		font-size: 5.5rem;
+	}
+} */
+
+@media (min-width: 701px) and (max-width: 900px) {
+	.info h1 {
+		font-size: 4rem;
+	}
+
+	.info p {
+		font-size: 1.3rem;
+	}
+}
+
+@media (max-width: 700px) {
+	.about {
+		flex-direction: column;
+	}
+
+	.image {
+		min-height: 450px;
+	}
+
+	.info {
+		padding-left: 0;
+		padding-top: 2rem;
+	}
+
+	.info h1 {
+		font-size: 4rem;
+	}
+
+	.info p {
+		font-size: 1.3rem;
+	}
+
+	.contacts {
+		font-size: 1.7rem;
+	}
+}

@@ -7,6 +7,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
+	background: #fdfdfd;
 }
 
 a {
@@ -41,7 +42,7 @@ button {
 }
 
 .container {
-	max-width: 1800px;
+	max-width: 1200px;
 	margin: auto;
 	padding: 0 2rem;
 	overflow: hidden;

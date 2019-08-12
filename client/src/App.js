@@ -8,6 +8,7 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Alert from './components/layout/alert/Alert'
 import Portfolio from './components/portfolio/Portfolio'
+import About from './components/about/About'
 import Login from './components/auth/Login'
 
 import { getUser } from './actions/auth'
@@ -25,6 +26,7 @@ function App() {
 				<section className="container">
 					<Header />
 					<Switch>
+						<Route exact path="/about" component={About} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/login" component={Login} />
 					</Switch>

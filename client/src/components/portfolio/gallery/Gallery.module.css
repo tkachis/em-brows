@@ -1,9 +1,10 @@
 .gallery {
 	padding: 2rem 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-	grid-auto-rows: minmax(auto, 570px);
-	grid-gap: 0.5rem;
+	/* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+	grid-template-columns: 1fr 1fr 1fr;
+	/* grid-auto-rows: minmax(auto, auto); */
+	grid-gap: 1rem;
 }
 
 .item {
@@ -37,4 +38,23 @@
 
 .delete:hover {
 	background: #e95156;
+}
+
+/* @media (max-width: 700px) {
+	.gallery {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
+} */
+
+@media (min-width: 571px) and (max-width: 900px) {
+	.gallery {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 570px) {
+	.gallery {
+		grid-template-columns: 1fr;
+		grid-auto-rows: 450px;
+	}
 }

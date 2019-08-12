@@ -9,7 +9,7 @@
 
 .image {
 	min-height: 720px;
-	box-shadow: 0 0 0.5rem #c5c5c5;
+	box-shadow: 0 0 0.3rem #c5c5c5;
 	background: url('../../img/about.jpg') no-repeat center center/cover;
 }
 
@@ -42,12 +42,6 @@
 .contacts li a {
 	text-decoration: underline;
 }
-
-/* @media (min-width: 901px) and (max-width: 1200px) {
-	.info h1 {
-		font-size: 5.5rem;
-	}
-} */
 
 @media (min-width: 701px) and (max-width: 900px) {
 	.info h1 {

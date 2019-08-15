@@ -4,20 +4,11 @@ import styles from './About.module.css'
 
 const About = props => {
 	return (
-		<div className={styles.about}>
-			<div className={styles.image}>
-				{/* <img
-					src="./img/about.jpg"
-					alt="Emma Tkacheva"
-					className={styles.image}
-				/> */}
-			</div>
+		<section className={`${styles.about} container`}>
+			<div>
+				<div className={`${styles.image} ${styles.image1}`} />
 
-			<div className={styles.info}>
-				<h1>
-					Эмма
-					<br /> Ткачева
-				</h1>
+				<h1>My Studio</h1>
 				<p>
 					Привет! Меня зовут Эмма и я Brow-мастер. В своей работе я
 					придерживаюсь эстетики натуральных образов - люблю естественность и
@@ -25,20 +16,25 @@ const About = props => {
 					придерживаюсь эстетики натуральных образов - люблю естественность и
 					легкость.
 				</p>
-
-				<ul className={styles.contacts}>
-					<li>
-						<a href="#a">Instagram</a>
-					</li>
-					<li>
-						<a href="#a">Vkontakte</a>
-					</li>
-					<li>
-						<a href="#a">WhatsApp</a>
-					</li>
-				</ul>
 			</div>
-		</div>
+			<div>
+				<div>
+					<h1>
+						Emma
+						<br /> Tkacheva
+					</h1>
+					<p>
+						Привет! Меня зовут Эмма и я Brow-мастер. В своей работе я
+						придерживаюсь эстетики натуральных образов - люблю естественность и
+						легкость. Меня зовут Эмма и я Brow-мастер. В своей работе я
+						придерживаюсь эстетики натуральных образов - люблю естественность и
+						легкость.
+					</p>
+				</div>
+
+				<div className={`${styles.image} ${styles.image2}`} />
+			</div>
+		</section>
 	)
 }
 

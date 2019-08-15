@@ -1,81 +1,81 @@
 .about {
 	display: flex;
-	padding: 2rem 0;
 }
 
 .about div {
 	flex: 1;
 }
 
-.image {
-	min-height: 720px;
-	box-shadow: 0 0 0.3rem #c5c5c5;
-	background: url('../../img/about.jpg') no-repeat center center/cover;
-}
-
-.info {
+.about div:last-child {
 	padding-left: 2rem;
 }
 
-.info h1 {
-	font-size: 6rem;
+.about h1 {
 	width: 100%;
+	font-size: 6rem;
+	line-height: 100%;
+	padding-top: 2rem;
+	font-family: 'Playfair Display', serif;
 }
 
-.info p {
+.about p {
 	padding: 2rem 0;
 	font-size: 1.5rem;
 	text-align: justify;
 	width: 100%;
 }
 
-.contacts {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 2rem 0;
-	font-size: 2rem;
-	line-height: 3rem;
+.image {
+	min-height: 700px;
 }
 
-.contacts li a {
-	text-decoration: underline;
+.image1 {
+	background: url('./about.jpg') no-repeat center center/cover;
+}
+
+.image2 {
+	background: url('./studio.jpg') no-repeat center center/cover;
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
-	.info h1 {
+	.about h1 {
 		font-size: 4rem;
 	}
 
-	.info p {
+	.about p {
 		font-size: 1.3rem;
 	}
 }
 
 @media (max-width: 700px) {
 	.about {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 
-	.image {
-		min-height: 450px;
-	}
-
-	.info {
-		padding-left: 0;
-		padding-top: 2rem;
-	}
-
-	.info h1 {
+	.about h1 {
 		font-size: 4rem;
 	}
 
-	.info p {
+	.about p {
 		font-size: 1.3rem;
 	}
 
-	.contacts {
-		font-size: 1.7rem;
+	.about div:last-child {
+		display: flex;
+		flex-direction: column-reverse;
+		padding-top: 2rem;
+		padding-left: 0;
+	}
+
+	.image {
+		min-height: 500px;
+	}
+
+	.image1 {
+		background: url('./studio.jpg') no-repeat center center/cover;
+	}
+
+	.image2 {
+		background: url('./about.jpg') no-repeat center center/cover;
 	}
 }

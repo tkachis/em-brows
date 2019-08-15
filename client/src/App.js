@@ -7,8 +7,10 @@ import store from './store'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Alert from './components/layout/alert/Alert'
+import Landing from './components/landing/Landing'
 import Portfolio from './components/portfolio/Portfolio'
 import About from './components/about/About'
+import Contacts from './components/contacts/Contacts'
 import Login from './components/auth/Login'
 
 import { getUser } from './actions/auth'
@@ -23,16 +25,16 @@ function App() {
 	return (
 		<Provider store={store}>
 			<Router>
-				<section className="container">
-					<Header />
-					<Switch>
-						<Route exact path="/about" component={About} />
-						<Route exact path="/portfolio" component={Portfolio} />
-						<Route exact path="/login" component={Login} />
-					</Switch>
-					<Alert />
-					<Footer />
-				</section>
+				<Header />
+				<Switch>
+					<Route exact path="/" component={Landing} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/portfolio" component={Portfolio} />
+					<Route exact path="/contacts" component={Contacts} />
+					<Route exact path="/login" component={Login} />
+				</Switch>
+				<Alert />
+				<Footer />
 			</Router>
 		</Provider>
 	)

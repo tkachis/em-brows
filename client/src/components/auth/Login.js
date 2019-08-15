@@ -29,7 +29,7 @@ const Login = ({ isAuthenticated, login }) => {
 	}
 
 	return (
-		<div className={styles.wrapper}>
+		<section className={`${styles.login} container`}>
 			<form onSubmit={e => onSubmit(e)} className={styles.form}>
 				<input
 					type="email"
@@ -47,7 +47,7 @@ const Login = ({ isAuthenticated, login }) => {
 				/>
 				<input type="submit" value="Войти" className={styles.btn} />
 			</form>
-		</div>
+		</section>
 	)
 }
 

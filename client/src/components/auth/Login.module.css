@@ -1,9 +1,8 @@
-.wrapper {
+.login {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 68vh;
-	padding: 2rem 0;
 }
 
 .form {
@@ -11,8 +10,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 25%;
-	min-width: 400px;
+	width: 400px;
 }
 
 .form input[type='email'],
@@ -41,3 +39,5 @@
 	background: #333;
 	color: #fff;
 }
+
+@media screen;

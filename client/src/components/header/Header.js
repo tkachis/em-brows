@@ -9,7 +9,7 @@ import { logout } from '../../actions/auth'
 
 const Header = ({ isAuthenticated, logout }) => {
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} container`}>
 			<Link to="/" className={styles.link}>
 				Em.brows
 			</Link>
@@ -21,14 +21,14 @@ const Header = ({ isAuthenticated, logout }) => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/about" className={styles.link}>
-							Обо мне
+						<Link to="/contacts" className={styles.link}>
+							Контакты
 						</Link>
 					</li>
 					<li>
-						<a href="#a" className={styles.link}>
-							Запись
-						</a>
+						<Link to="/about" className={styles.link}>
+							Обо мне
+						</Link>
 					</li>
 					{isAuthenticated && (
 						<li>

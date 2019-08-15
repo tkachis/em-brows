@@ -14,9 +14,7 @@ const GalleryItem = ({
 	return (
 		<div className={styles.item}>
 			{isAuthenticated && (
-				<button onClick={() => deleteImage(_id)} className={styles.delete}>
-					<i className="fas fa-minus fa-2x" />
-				</button>
+				<button onClick={() => deleteImage(_id)} className={styles.delete} />
 			)}
 			<LazyLoadImage
 				className={styles.image}

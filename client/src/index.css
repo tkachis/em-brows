@@ -8,6 +8,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	background: #fdfdfd;
+	color: #333;
 }
 
 a {
@@ -20,7 +21,6 @@ ul {
 }
 
 p {
-	color: #333;
 	font-size: 1.3rem;
 }
 
@@ -30,9 +30,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	color: #333;
+	font-family: 'Playfair Display', serif;
+	font-weight: 200;
 }
 
 button {
@@ -44,6 +43,13 @@ button {
 .container {
 	max-width: 1200px;
 	margin: auto;
-	padding: 0 2rem;
+	padding: 2rem;
 	overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+	*:hover {
+		background: none;
+		color: none;
+	}
 }

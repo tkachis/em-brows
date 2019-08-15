@@ -6,12 +6,12 @@ import styles from './Portfolio.module.css'
 
 const Portfolio = () => {
 	return (
-		<div className={styles.portfolio}>
+		<section className={`${styles.portfolio} container`}>
 			<h1>
 				Исследуй мою галлерею потрясающих <span>бровей</span>
 			</h1>
 			<Gallery />
-		</div>
+		</section>
 	)
 }
 

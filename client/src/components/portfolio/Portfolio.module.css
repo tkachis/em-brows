@@ -3,12 +3,11 @@
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	padding: 2rem 0;
 }
 
 .portfolio h1 {
 	font-size: 1.8rem;
-	padding: 2rem;
+	padding: 0 0 4rem 0;
 }
 
 .portfolio h1 span {

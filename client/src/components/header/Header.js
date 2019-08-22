@@ -7,6 +7,14 @@ import styles from './Header.module.css'
 
 import { logout } from '../../actions/auth'
 
+function NavLink(props) {
+	return (
+		<li>
+			<Link {...props} />
+		</li>
+	)
+}
+
 const Header = ({ isAuthenticated, logout }) => {
 	return (
 		<header className={`${styles.header} container`}>
@@ -15,21 +23,18 @@ const Header = ({ isAuthenticated, logout }) => {
 			</Link>
 			<nav>
 				<ul className={styles.ul}>
-					<li>
-						<Link to="/portfolio" className={styles.link}>
-							Портфолио
-						</Link>
-					</li>
-					<li>
-						<Link to="/contacts" className={styles.link}>
-							Контакты
-						</Link>
-					</li>
-					<li>
-						<Link to="/about" className={styles.link}>
-							Обо мне
-						</Link>
-					</li>
+					<NavLink to="/portfolio" className={styles.link}>
+						Портфолио
+					</NavLink>
+
+					<NavLink to="/contacts" className={styles.link}>
+						Контакты
+					</NavLink>
+
+					<NavLink to="/about" className={styles.link}>
+						Обо мне
+					</NavLink>
+
 					{isAuthenticated && (
 						<li>
 							<button className={styles.exit} onClick={() => logout()}>

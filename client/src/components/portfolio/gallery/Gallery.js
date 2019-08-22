@@ -18,7 +18,7 @@ const Gallery = ({
 	deleteImage,
 	uploadImage,
 	image: { images, isLoading },
-	auth: { isAuthenticated },
+	auth: { isAuthenticated, user },
 	scrollPosition,
 }) => {
 	useEffect(() => {
@@ -45,16 +45,19 @@ const Gallery = ({
 		<Spinner />
 	) : (
 		<>
-			{!images ? (
+			{!user.isAdmin && images.length === 0 ? (
 				<h1>Нет изображений</h1>
 			) : (
 				<div className={styles.gallery}>
-					{isAuthenticated && <FormItem uploadImage={uploadImage} />}
+					{isAuthenticated && user.isAdmin && (
+						<FormItem uploadImage={uploadImage} />
+					)}
 					{galleryItemAnimation.map(({ item, props: animation }) => (
 						<GalleryItem
 							key={item._id}
 							image={item}
 							isAuthenticated={isAuthenticated}
+							user={user}
 							deleteImage={deleteImage}
 							scrollPosition={scrollPosition}
 							animation={animation}
@@ -67,10 +70,11 @@ const Gallery = ({
 }
 
 Gallery.propTypes = {
+	image: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
 	getImages: PropTypes.func.isRequired,
 	deleteImage: PropTypes.func.isRequired,
 	uploadImage: PropTypes.func.isRequired,
-	image: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({

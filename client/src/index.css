@@ -54,4 +54,8 @@ button {
 		background: none;
 		color: none;
 	}
+
+	.container {
+		padding: 1rem 2rem;
+	}
 }

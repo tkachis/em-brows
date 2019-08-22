@@ -10,7 +10,7 @@ import { logout } from '../../actions/auth'
 function NavLink(props) {
 	return (
 		<li>
-			<Link {...props} />
+			<Link {...props} className={styles.link} />
 		</li>
 	)
 }
@@ -18,26 +18,20 @@ function NavLink(props) {
 const Header = ({ isAuthenticated, logout }) => {
 	return (
 		<header className={`${styles.header} container`}>
-			<Link to="/" className={styles.link}>
+			<Link to="/" className={`${styles.link} ${styles.logo}`}>
 				Em.brows
 			</Link>
 			<nav>
 				<ul className={styles.ul}>
-					<NavLink to="/portfolio" className={styles.link}>
-						Портфолио
-					</NavLink>
+					<NavLink to="/portfolio">Портфолио</NavLink>
 
-					<NavLink to="/contacts" className={styles.link}>
-						Контакты
-					</NavLink>
+					<NavLink to="/contacts">Контакты</NavLink>
 
-					<NavLink to="/about" className={styles.link}>
-						Обо мне
-					</NavLink>
+					<NavLink to="/about">Обо мне</NavLink>
 
 					{isAuthenticated && (
 						<li>
-							<button className={styles.exit} onClick={() => logout()}>
+							<button className={styles.link} onClick={() => logout()}>
 								Выйти
 							</button>
 						</li>

@@ -19,6 +19,7 @@
 	display: flex;
 	flex-direction: column;
 	line-height: 2rem;
+	font-size: 100%;
 }
 
 .info ul li a {
@@ -31,7 +32,6 @@
 	height: 600px;
 	width: 100%;
 	background: #333;
-	z-index: -1;
 }
 
 @media screen and (max-width: 700px) {

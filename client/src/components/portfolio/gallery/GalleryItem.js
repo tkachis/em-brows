@@ -9,20 +9,21 @@ import styles from './Gallery.module.css'
 const GalleryItem = ({
 	image: { path, _id },
 	isAuthenticated,
+	user,
 	deleteImage,
 	scrollPosition,
 	animation,
 }) => {
 	return (
 		<animated.div className={styles.item} style={animation}>
-			{isAuthenticated && (
+			{isAuthenticated && user.isAdmin && (
 				<button onClick={() => deleteImage(_id)} className={styles.delete} />
 			)}
 			<LazyLoadImage
 				className={styles.image}
 				alt="Brows"
 				effect="blur"
-				src={`http://localhost:5000/uploads${path}`}
+				src={`/uploads${path}`}
 				height={'100%'}
 				width={'100%'}
 				scrollPosition={scrollPosition}
@@ -34,6 +35,7 @@ const GalleryItem = ({
 GalleryItem.propTypes = {
 	image: PropTypes.object.isRequired,
 	isAuthenticated: PropTypes.bool.isRequired,
+	user: PropTypes.object.isRequired,
 	deleteImage: PropTypes.func.isRequired,
 }
 

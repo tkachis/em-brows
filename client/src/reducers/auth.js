@@ -3,7 +3,7 @@ import { LOGIN_SUCCESS, LOGIN_FAIL, GET_USER, LOGOUT } from '../constants'
 const initialState = {
 	token: localStorage.getItem('token'),
 	isAuthenticated: false,
-	user: null,
+	user: {},
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -12,7 +12,7 @@ export default (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				isAuthenticated: true,
-				user: payload,
+				user: { ...payload },
 			}
 		case LOGIN_SUCCESS:
 			localStorage.setItem('token', payload.token)

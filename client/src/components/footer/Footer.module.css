@@ -3,7 +3,6 @@
 	text-align: center;
 	align-items: center;
 	justify-content: space-between;
-	padding: 4rem 2rem;
 }
 
 .footer h2 {
@@ -30,6 +29,5 @@
 		flex-direction: column;
 		justify-content: center;
 		line-height: 2.5rem;
-		padding: 2rem 2rem;
 	}
 }

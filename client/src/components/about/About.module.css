@@ -6,7 +6,7 @@
 	flex: 1;
 }
 
-.about div:last-child {
+.about > div:last-child {
 	padding-left: 2rem;
 }
 
@@ -30,11 +30,11 @@
 }
 
 .image1 {
-	background: url('./img/about.jpg') no-repeat center center/cover;
+	background: url('/img/about.jpg') no-repeat center center/cover;
 }
 
 .image2 {
-	background: url('./img/studio.jpg') no-repeat center center/cover;
+	background: url('/img/studio.jpeg') no-repeat center center/cover;
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
@@ -60,7 +60,7 @@
 		font-size: 1.3rem;
 	}
 
-	.about div:last-child {
+	.about > div:last-child {
 		display: flex;
 		flex-direction: column-reverse;
 		padding-top: 2rem;
@@ -72,10 +72,10 @@
 	}
 
 	.image1 {
-		background: url('./img/studio.jpg') no-repeat center center/cover;
+		background: url('/img/studio.jpeg') no-repeat center center/cover;
 	}
 
 	.image2 {
-		background: url('./img/about.jpg') no-repeat center center/cover;
+		background: url('/img/about.jpg') no-repeat center center/cover;
 	}
 }

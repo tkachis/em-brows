@@ -1,4 +1,5 @@
 import React from 'react'
+import { animated } from 'react-spring'
 import PropTypes from 'prop-types'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
@@ -10,9 +11,10 @@ const GalleryItem = ({
 	isAuthenticated,
 	deleteImage,
 	scrollPosition,
+	animation,
 }) => {
 	return (
-		<div className={styles.item}>
+		<animated.div className={styles.item} style={animation}>
 			{isAuthenticated && (
 				<button onClick={() => deleteImage(_id)} className={styles.delete} />
 			)}
@@ -25,7 +27,7 @@ const GalleryItem = ({
 				width={'100%'}
 				scrollPosition={scrollPosition}
 			/>
-		</div>
+		</animated.div>
 	)
 }
 

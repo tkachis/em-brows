@@ -1,0 +1,30 @@
+.viewpager {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	user-select: none;
+}
+
+.viewpager > div {
+	position: absolute;
+	width: 100vw;
+	height: 80vh;
+	will-change: transform;
+}
+
+.content {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	will-change: transform;
+	box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.1),
+		0 37.5px 75px -37.5px rgba(0, 0, 0, 0.2);
+}
+
+.video {
+	width: 100%;
+	height: 100%;
+}

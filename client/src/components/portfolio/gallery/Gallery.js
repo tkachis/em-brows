@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { trackWindowScroll } from 'react-lazy-load-image-component'
 import { useTransition } from 'react-spring'
 import PropTypes from 'prop-types'
 
@@ -19,7 +17,6 @@ const Gallery = ({
 	uploadImage,
 	image: { images, isLoading },
 	auth: { isAuthenticated, user },
-	scrollPosition,
 }) => {
 	useEffect(() => {
 		getImages()
@@ -59,7 +56,6 @@ const Gallery = ({
 							isAuthenticated={isAuthenticated}
 							user={user}
 							deleteImage={deleteImage}
-							scrollPosition={scrollPosition}
 							animation={animation}
 						/>
 					))}
@@ -82,10 +78,7 @@ const mapStateToProps = state => ({
 	auth: state.auth,
 })
 
-export default compose(
-	trackWindowScroll,
-	connect(
-		mapStateToProps,
-		{ getImages, deleteImage, uploadImage }
-	)
+export default connect(
+	mapStateToProps,
+	{ getImages, deleteImage, uploadImage }
 )(Gallery)

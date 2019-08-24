@@ -24,7 +24,7 @@ export const getImages = () => async dispatch => {
 
 		dispatch({
 			type: IMAGE_ERROR,
-			payload: { msg: err.response.statusText, status: err.response.status },
+			payload: err.response,
 		})
 	}
 }
@@ -56,7 +56,7 @@ export const uploadImage = formData => async dispatch => {
 
 		dispatch({
 			type: IMAGE_ERROR,
-			payload: { msg: err.response.statusText, status: err.response.status },
+			payload: err.response,
 		})
 	}
 }
@@ -77,7 +77,7 @@ export const deleteImage = imageId => async dispatch => {
 
 		dispatch({
 			type: IMAGE_ERROR,
-			payload: { msg: err.response.statusText, status: err.response.status },
+			payload: err.response,
 		})
 	}
 }

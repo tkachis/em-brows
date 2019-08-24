@@ -6,7 +6,7 @@
 
 .info {
 	padding: 2rem;
-	width: 250px;
+	width: auto;
 	background: #333;
 	color: #fff;
 }
@@ -40,16 +40,8 @@
 		flex-direction: column-reverse;
 	}
 
-	.info {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-	}
-
 	.info h1 {
-		font-size: 1.3rem;
-		padding-right: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.map {

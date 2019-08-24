@@ -8,7 +8,7 @@ const Portfolio = () => {
 	return (
 		<section className={`${styles.portfolio} container`}>
 			<h1>
-				Исследуй мою галлерею потрясающих <span>бровей</span>
+				Исследуй мою галерею потрясающих <span>бровей</span>
 			</h1>
 			<Gallery />
 		</section>

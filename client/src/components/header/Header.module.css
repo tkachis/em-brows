@@ -1,6 +1,7 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+	font-family: 'Playfair Display', serif;
 }
 
 .link {
@@ -8,26 +9,22 @@
 	font-size: 1.3rem;
 	cursor: pointer;
 	height: 100%;
+	line-height: 1.8rem;
 }
 
 .logo {
 	height: 100%;
-	font-family: 'Playfair Display', serif;
 }
 
 .ul {
 	display: flex;
 	flex-direction: column;
 	text-align: right;
-	line-height: 1.8rem;
 }
 
 @media screen and (max-width: 700px) {
 	.link {
 		font-size: 1.1rem;
-	}
-
-	.ul {
 		line-height: 1.6rem;
 	}
 }

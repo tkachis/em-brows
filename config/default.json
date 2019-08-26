@@ -1,5 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://tkachis:Igortkach1@embrowscluster-4jhbb.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecretKey": "a1S2d3F4g5",
-    "destination": "./uploads"
-}

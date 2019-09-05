@@ -32,30 +32,30 @@ const Card = ({ data: { src, text }, height, width }) => {
 				onMouseLeave={() => set({ xys: [0, 0, 1] })}
 				style={{ transform: xys.interpolate(trans) }}
 			>
-				<div className={styles.overlay}>
-					{src.split('/')[0] === 'video' ? (
-						<video
-							className={styles.video}
-							preload={'auto'}
-							autoPlay={true}
-							loop={true}
-							muted={'muted'}
-						>
-							<source src={src} type="video/mp4" />
-						</video>
-					) : (
-						<div
-							className={styles.image}
-							style={{
-								background: `url(${src})`,
-								backgroundSize: 'cover',
-								backgroundPosition: 'center center',
-								width: '500px',
-								height: '500px',
-							}}
-						/>
-					)}
-				</div>
+				{/* <div className={styles.overlay}> */}
+				{src.split('/')[0] === 'video' ? (
+					<video
+						className={styles.video}
+						preload={'auto'}
+						autoPlay={true}
+						loop={true}
+						muted={'muted'}
+					>
+						<source src={src} type="video/mp4" />
+					</video>
+				) : (
+					<div
+						className={styles.image}
+						style={{
+							background: `url(${src})`,
+							backgroundSize: 'cover',
+							backgroundPosition: 'center center',
+							width: '500px',
+							height: '500px',
+						}}
+					/>
+				)}
+				{/* </div> */}
 				<h1>{text}</h1>
 			</animated.div>
 			<Waypoint bottomOffset="-100%" onEnter={() => toggle(true)} />
